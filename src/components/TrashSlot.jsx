@@ -5,6 +5,8 @@ import slotBorder from '../assets/slot-border.png';
 const TrashSlot = ({ trashCount, onTrashClick, isSelected }) => {
   const { isOver, setNodeRef } = useDroppable({
     id: 'trash-slot',
+    delay: 250,
+    tolerance: 5, 
   });
 
   return (
@@ -12,8 +14,6 @@ const TrashSlot = ({ trashCount, onTrashClick, isSelected }) => {
       <span className="panel-label trash-label">
         TRASH
       </span>
-
-      
       <div
         ref={setNodeRef}
         onClick={onTrashClick}
